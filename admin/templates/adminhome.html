@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='adminhome.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="nav-link" href="{{ url_for('adminhome') }}">Home</a>
+        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Admin Panel</h2>
+            <a href="{{ url_for('view_alumni') }}">View Alumni</a>
+            <a href="{{ url_for('add_alumni') }}">Add Alumni</a>
+            <a href="{{ url_for('view_student') }}">View Student</a>
+            <a href="{{ url_for('view_jobpost') }}">View Job Posting</a>
+            <a href="{{ url_for('view_chat') }}">View Chat</a>
+        </aside>
+
+        <main class="content">
+            <h1>Welcome to the Admin Home Page</h1>
+            <section>
+                <h2>Alumni Management</h2>
+                <p>Manage alumni profiles by viewing and adding details.</p>
+            </section>
+            <section>
+                <h2>Student Management</h2>
+                <p>Access and manage student profiles and information.</p>
+            </section>
+            <section>
+                <h2>Job Posting & Chat</h2>
+                <p>View job postings and chat conversations.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

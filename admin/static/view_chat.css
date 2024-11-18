@@ -1,0 +1,24 @@
+/* Ensure no horizontal scrollbar appears */
+body, html {
+    overflow-x: hidden;
+    margin: 50px;
+    padding: 0;
+}
+
+/* Styling for the table container to handle overflow */
+.table-container {
+    max-width: 50%;
+    padding: 15px;
+   /* overflow-x: auto;*/
+}
+
+/* Table is fully responsive and fills the width of the container */
+.table {
+    width: 50%;
+}
+
+/* Center the title */
+.table-title {
+    text-align: center;
+    margin-bottom: 20px;
+}

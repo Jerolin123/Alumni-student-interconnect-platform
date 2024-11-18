@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Alumni</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_alumni.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Alumni Platform</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('adminhome') }}">Home</a>
+                </li>
+                <!-- Add more nav items here if needed -->
+            </ul>
+        </div>
+    </nav>
+    <!--<div class="container mt-5">
+        <h2 class="text-center mb-4">Add Alumni</h2>
+        <form action="{{ url_for('add_alumni') }}" method="POST" class="form-container">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required placeholder="Enter alumni name">
+            </div>
+            <div class="form-group">
+                <label for="gmail">Gmail:</label>
+                <input type="email" class="form-control" id="gmail" name="gmail" required placeholder="Enter alumni email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Alumni</button>
+        </form>
+    </div>-->
+    
+    
+        <h2>Alumni Request Approvals</h2>
+        
+        {% for row in requests %}
+        <div class="request-form">
+            <form action="{{ url_for('accept_request', req_id=row.id) }}" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ row.name }}" readonly>
+    
+                <label for="gmail">Email:</label>
+                <input type="email" id="gmail" name="gmail" value="{{ row.gmail }}" readonly>
+    
+                <label for="col_code">College Code:</label>
+                <input type="text" id="col_code" name="col_code" value="{{ row.col_cod }}" readonly>
+    
+                <label for="reg_no">Register Number:</label>
+                <input type="text" id="reg_no" name="reg_no" value="{{ row.reg }}" readonly>
+    
+                <label for="current_job">Current Job:</label>
+                <input type="text" id="current_job" name="current_job" value="{{ row.curjob }}" readonly>
+    
+                <label for="pass_out">Passed Out Year:</label>
+              <input type="number" id="pass_out" name="pass_out" value="{{ row.passedout_year }}" readonly>
+
+              <!--  <button type="submit">Accept</button>
+            </form>
+            
+            <form action="{{ url_for('reject_request', req_id=row.id) }}" method="POST" style="display: inline;">
+                <button type="submit" id="ri">Reject</button>
+            </form>-->
+
+
+
+
+            <div class="button-container">
+                <button type="submit" id="accept">Accept</button>
+                <form action="{{ url_for('reject_request', req_id=row.id) }}" method="POST" style="display: inline;">
+                    <button type="submit" id="reject">Reject</button>
+                </form>
+            </div>
+            </form>
+        </div>
+        <hr>
+        {% endfor %}
+    
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
