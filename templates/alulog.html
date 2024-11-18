@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Dashboard</title>
+    <!-- Link to Bootstrap CSS from static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='alulog.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- First Div: Navbar -->
+        <div class="row navb" id="navbar">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- Home Link on the Left -->
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+
+                    <!-- Spacer to center the username -->
+                    <div class="mx-auto">
+                        <span class="navbar-text" id="user">Welcome, {{ alumni_name }}</span>
+                    </div>
+
+                    <!-- Chat, View Uploaded, Job Posted, and Logout Links on the right -->
+                    <div class="ml-auto d-flex">
+                        <a class="nav-link" href="{{ url_for('chat') }}">Chat</a>
+                        <a class="nav-link" href="{{ url_for('view_uploads') }}">View Uploaded</a>
+                        <a class="nav-link" href="{{ url_for('jobpost') }}">Post a Job</a>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Second Div: Background Image and Angular Tag -->
+        <div class="row" id="banner">
+          <!--  <div class="col-md-12 d-flex justify-content-center align-items-center">
+                <div class="angular-tags" id="backimg">
+            
+                </div>
+            </div>-->
+        </div>
+        
+
+        <!-- Third Div: About Section -->
+        <div class="row hel" id="about">
+            <div class="col-md-12">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to the Alumni-Student Connect Platform. This platform bridges the gap between current students and alumni by providing a collaborative environment for sharing knowledge, experiences, and opportunities.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='alumini.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- First Div: Navbar -->
+        <div class="row navb" id="navbar">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <!-- Home Link on the Left -->
+                    <a class="navbar-brand" href="#">Home</a>
+
+                    <!-- Spacer to push Login to the right -->
+                    <div class="ml-auto">
+                        <!-- Login Link on the Right -->
+                        <a class="nav-link" href="{{ url_for('loginalu') }}">Login</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Second Div: Background Image and Angular Tag -->
+        <div class="row" id="banner">
+            <!-- Background image div -->
+            <!-- You can uncomment and add your angular tags here if needed -->
+            <!-- <div class="col-md-12 d-flex justify-content-center align-items-center">
+                <div class="angular-tags">
+                    <button class="btn btn-primary">Student</button>
+                    <button class="btn btn-secondary">Alumni</button>
+                </div>
+            </div> -->
+        </div>
+        
+        <!-- Third Div: About Section -->
+        <div class="row hel" id="about">
+            <div class="col-md-12">
+                <h2>About Us</h2>
+                <p>
+                    Welcome to the Alumni-Student Connect Platform. This platform bridges the gap between current students and alumni by providing a collaborative environment for sharing knowledge, experiences, and opportunities.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

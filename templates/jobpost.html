@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Post Upload</title>
+    <!-- Link to Bootstrap and custom CSS via Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jobpost.css') }}">
+</head>
+<body>
+    <div class="row navb" id="navbar">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Home Link on the Left -->
+                <a class="navbar-brand" href="{{ url_for('alulog') }}">Home</a>
+                <!-- Spacer to push other content to the right -->
+            </nav>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <!-- Single Form Section -->
+            <div class="col-md-10">
+                <div class="form-container">
+                    <h3>Alumni Post Upload</h3>
+                    <!-- Flask form with POST method for file upload -->
+                    <form method="POST" action="{{ url_for('upload_post') }}" enctype="multipart/form-data">
+                        <div class="row">
+                            <!-- Alumni Info Section (Left Side) -->
+                            <div class="col-md-5">
+                                <!-- Alumni Name -->
+                                <div class="form-group">
+                                    <label for="alumniName">Name</label>
+                                    <input type="text" class="form-control" id="alumniName" name="alumni_name" placeholder="Enter your name" required>
+                                </div>
+                                <!-- Alumni Email -->
+                                <div class="form-group">
+                                    <label for="alumniEmail">Email</label>
+                                    <input type="email" class="form-control" id="alumniEmail" name="alumni_email" placeholder="Enter your email" required>
+                                </div>
+                                <!-- Alumni Job Title -->
+                                <div class="form-group">
+                                    <label for="alumniTitle">Job Title</label>
+                                    <input type="text" class="form-control" id="alumniTitle" name="job_title" placeholder="Enter your job title" required>
+                                </div>
+                            </div>
+
+                            <!-- Post Upload Section (Middle) -->
+                            <div class="col-md-5 offset-md-1">
+                                <!-- Date -->
+                                <div class="form-group">
+                                    <label for="postDate">Date</label>
+                                    <input type="date" class="form-control" id="postDate" name="post_date" required>
+                                </div>
+                                <!-- Photo Upload -->
+                                <div class="form-group">
+                                    <label for="postUpload">Upload Photo</label>
+                                    <input type="file" class="form-control-file" id="postUpload" name="photo" required>
+                                </div>
+                                <!-- Post Description -->
+                                <div class="form-group">
+                                    <label for="postDescription">Description</label>
+                                    <textarea class="form-control" id="postDescription" name="description" rows="4" placeholder="Describe your post" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

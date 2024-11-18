@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Request Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='request.css') }}">
+</head>
+<body>
+    <div class="row navb" id="navbar">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Home Link on the Left -->
+                <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+            </nav>
+        </div>
+    </div>
+    <div class="form-container">
+        <h2>Alumni Request Form</h2>
+
+       {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul>
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('request_form') }}" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="gmail">Gmail:</label>
+            <input type="email" id="gmail" name="gmail" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="re_password">Re-enter Password:</label>
+            <input type="password" id="re_password" name="re_password" required>
+
+            <label for="col_code">College Code:</label>
+            <input type="text" id="col_code" name="col_code" required>
+
+            <label for="reg_no">Register Number:</label>
+            <input type="text" id="reg_no" name="reg_no" required>
+
+            <label for="current_job">Current Job:</label>
+            <input type="text" id="current_job" name="current_job" required>
+
+            <label for="pass_out">Passed Out Year:</label>
+            <input type="number" id="pass_out" name="pass_out" required min="1900" max="2099" step="1">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

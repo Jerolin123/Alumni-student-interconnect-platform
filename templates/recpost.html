@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='recpost.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Alumni Post Section -->
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                {% for post in posts %}
+                <div class="post-container">
+                    <!-- Alumni Info -->
+                    <div class="d-flex justify-content-between">
+                        <h5>{{ post[0] }}</h5> <!-- Alumni Name on the left -->
+                        <span>{{ post[2] }}</span> <!-- Date on the right -->
+                    </div>
+                    <h6>{{ post[1] }}</h6> <!-- Job Title -->
+
+                    <div class="post-content">
+                        <!-- Image with click to expand -->
+                        <a href="{{ url_for('uploaded_file', filename=post[3]) }}" target="_blank">
+                            <img src="{{ url_for('uploaded_file', filename=post[3]) }}" class="post-image" alt="Job Image">
+                        </a>
+                        <!-- Description -->
+                        <p>{{ post[4] }}</p>
+                    </div>
+                </div>
+                <hr> <!-- Separator between posts -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

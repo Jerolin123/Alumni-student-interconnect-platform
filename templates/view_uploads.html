@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Uploaded Posts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_uploads.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Uploaded Posts</h1>
+        
+        <div class="uploads">
+            {% if uploads %}
+                <ul>
+                {% for upload in uploads %}
+                    <li>
+                        <h3>{{ upload[3] }}</h3> <!-- Job Title (assumed to be in the third column) -->
+                        <img src="{{ url_for('uploaded_file', filename=upload[5]) }}" alt="Uploaded Image" width="200">
+                        <p>{{ upload[6] }}</p> <!-- Description (assumed to be in the fifth column) -->
+                        <form action="{{ url_for('delete_post', post_id=upload[0], image=upload[3]) }}" method="POST" class="delete-form">
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <p>No uploaded posts found.</p>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('alulog') }}">Back to Alumni Dashboard</a>
+    </div>
+</body>
+</html>

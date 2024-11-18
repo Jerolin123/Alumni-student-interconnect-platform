@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="row navb" id="navbar">
+        <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <!-- Home Link on the Left -->
+                <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2 class="text-center mt-5">Login Form</h2>
+        <form class="mt-4" method="POST" action="{{ url_for('login') }}">  <!-- Adjust the action as necessary -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="background-color: #001B2E;">Login</button>
+        </form>
+        <p class="mt-3">Don't have an account? <a href="{{ url_for('signup') }}">Signup</a> here</p>
+    </div>
+</body>
+</html>
