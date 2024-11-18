@@ -1,0 +1,60 @@
+/* Navbar styling */
+#navbar {
+    background-color: #001B2E;/* Transparent dark background */
+    height: 50px;
+}
+#navbar a
+{
+    color:white;
+    font-weight: bold;
+    font-size:1.5rem;
+}
+
+.navbar-light .navbar-brand {
+    color: white; /* Change navbar text color */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Banner styling */
+#banner {
+    height: 400px;
+    background-image: url("images/background2.jpeg"); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+}
+
+.angular-tags {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.angular-tags button {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+/* About section styling */
+#about {
+    padding: 50px 20px;
+    background-color:#04324C; /* Light gray background */
+    text-align: center;
+    height: 285px;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color:white;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #f1f3f5; /* Text color */
+}
+.hel
+{
+    height: 300px;
+}

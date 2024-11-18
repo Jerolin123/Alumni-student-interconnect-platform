@@ -1,0 +1,72 @@
+/* Navbar styling */
+#navbar {
+    background-color: #001B2E;
+    height: 50px;
+}
+#navbar a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Ensure welcome text is white */
+.navbar-text {
+    color: white; /* This ensures the welcome message appears in white */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Banner styling */
+#banner {
+    height: 400px;
+    background-image: url("images/alumini1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:  center;
+}
+
+.angular-tags {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.angular-tags button {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+/* About section styling */
+#about {
+    padding: 50px 20px;
+    background-color: #04324C;
+    text-align: center;
+    height: 285px;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: #f1f3f5;
+}
+
+.hel {
+    height: 350px;
+}
+#user
+{
+    color:white;
+}
+

@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Chat History */
+#chat-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f7f7f7;
+}
+
+/* Chat Message Styles */
+.chat-message {
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 60%;
+}
+
+.sent {
+    background-color: #bcf7be;
+    color: rgb(15, 15, 15);
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #e0e0e0;
+    color: black;
+    align-self: flex-start;
+}
+
+/* Replied Message Preview (in sent messages) */
+.replied-message-preview {
+    font-size: 0.85em;
+    color: #555;
+    padding-left: 10px;
+    border-left: 3px solid #888;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Reply Preview Section (above input) */
+.reply-preview {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cancel-reply-button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+/* Message Input */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    padding-left: 400px;
+    padding-right:400px;
+    border-radius: 50px;
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    
+    border: 1px solid #ddd;
+    border-radius: 23px 23px 23px 23px;
+}
+
+
+#send-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 23px 23px 23px 23px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #388E3C;
+}
+.reply-icon {
+    font-size: 18px; /* Adjust size */
+    color: #7c7d7e;  /* Change color if needed */
+    margin-left: 10px; /* Adjust spacing */
+}
+#message-input {
+    font-weight: bold;
+
+}
+#send-button {
+    background-color: #25D366; /* WhatsApp-like green color */
+    border: none;
+    border-radius: 50%; /* Circular shape */
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#send-button svg {
+    fill: white; /* Icon color */
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+#send-button:hover svg {
+    transform: scale(1.1); /* Slightly enlarges icon on hover */
+}
+.date-header {
+    font-size: 0.8em;
+    color: #666;
+    margin-bottom: 5px;
+    text-align: center;
+}

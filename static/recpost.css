@@ -1,0 +1,42 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.post-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.post-container h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.post-container h6 {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.post-content {
+    margin-top: 10px;
+}
+
+.post-image {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.post-image:hover {
+    transform: scale(1.05);
+}
+
+.post-content p {
+    font-size: 1rem;
+    color: #212529;
+}
